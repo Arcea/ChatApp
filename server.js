@@ -33,6 +33,9 @@ io.sockets.on('connection', function(socket) {
 	});
 
 	socket.on("send message", function(data) {
+		if (data.trim() == '') {
+			data = "Ik ben een idioot die berichten verzend zonder iets in te vullen";
+		}
 		io.sockets.emit('new message', {
 			msg: data,
 			user: socket.username
