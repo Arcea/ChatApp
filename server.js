@@ -11,7 +11,7 @@ var connections = [];
 var localPort = portfinder.basePort;
 
 
-if(localPort != port){
+if (localPort != port) {
 	server.listen(process.env.PORT || process.argv[2] || port);
 	console.log("Server up");
 } else {
@@ -59,6 +59,9 @@ io.sockets.on('connection', function(socket) {
 		}
 		callback(true);
 		socket.username = data;
+		if (users[0] != undefined) {
+			joinedChat(socket.username);
+		}
 		users.push(socket.username);
 		updateUserNames();
 	});
@@ -66,4 +69,9 @@ io.sockets.on('connection', function(socket) {
 	function updateUserNames() {
 		io.sockets.emit('get users', users);
 	}
+
+	function joinedChat(newUser) {
+		io.sockets.emit('joined chat', newUser);
+	}
+
 });

@@ -39,4 +39,8 @@ $(function() {
 		}
 		$users.html(html);
 	})
-})
+
+	socket.on('joined chat', function(user) {
+		$chat.append('<div class="well"><strong>' + user + ' joined the chat</strong></div>');
+	});
+});
