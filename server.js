@@ -49,6 +49,14 @@ io.sockets.on('connection', function(socket) {
 	})
 
 	socket.on("new user", function(data, callback) {
+		if (data.trim() == '') {
+			data = "XxPussySlayer69xX";
+		}
+		for (var i = 1; i <= users.length; i++) {
+			if (users[i - 1] == data) {
+				data = data + i;
+			}
+		}
 		callback(true);
 		socket.username = data;
 		users.push(socket.username);
