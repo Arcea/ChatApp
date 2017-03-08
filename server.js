@@ -5,16 +5,20 @@ var io = require('socket.io').listen(server);
 var port = require('./host');
 var portfinder = require('portfinder');
 
-portfinder.getPort(function (err, port){
-	console.log(port);
-})
-
-
 var users = [];
 var connections = [];
+var localPort = portfinder.basePort;
 
-server.listen(process.env.PORT || process.argv[2] || port);
-console.log("Server up");
+
+if(localPort != port){
+	server.listen(process.env.PORT || process.argv[2] || port);
+	console.log("Server up");
+} else {
+	var newPort = localPort + 1;
+	server.listen(process.env.PORT || process.argv[2] || newPort);
+	console.log("Server up with a different port");
+	console.log("The new port is: " + newPort);
+}
 
 app.use(express.static(__dirname, {
 	extensions: ['html', 'js', 'css']
