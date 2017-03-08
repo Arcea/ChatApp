@@ -4,8 +4,9 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = require('./host');
 var portfinder = require('portfinder');
+var chatHelper = require('./helpers/chatHelpers');
 
-portfinder.getPort(function (err, port){
+portfinder.getPort(function(err, port) {
 	console.log(port);
 })
 
@@ -36,6 +37,7 @@ io.sockets.on('connection', function(socket) {
 		if (data.trim() == '') {
 			data = "Ik ben een idioot die berichten verzend zonder iets in te vullen";
 		}
+		data = chatHelper.imageShow(data);
 		io.sockets.emit('new message', {
 			msg: data,
 			user: socket.username

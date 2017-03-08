@@ -9,3 +9,8 @@ body {
 	height:500px;
 	overflow-y:auto;
 }
+
+.imageMessage {
+	height: inherit;
+	width: inherit;
+}
