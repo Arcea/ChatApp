@@ -1,8 +1,13 @@
 body {
 	margin:30px;
+	background-color:#e5eff7;
 }
 #messageArea {
 	display:none;
+}
+
+#message {
+	resize:none;
 }
 
 .chat{
