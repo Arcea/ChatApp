@@ -62,7 +62,7 @@ $(function() {
 	})
 });
 
-var scrollRate = 100;
+var scrollRate = 0.1;
 
 function scrollDiv_init(){
 	var chat = $('#chat');
@@ -79,7 +79,7 @@ function scrollDiv() {
 		chat.scrollTop = previousScrollTop;
 		previousScrollTop++;
 
-		reachedMaxScroll = chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight);
+		// reachedMaxScroll = chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight);
 	} else {
 		reachedMaxScroll = (chat.scrollTop == 0)?false:true;
 
