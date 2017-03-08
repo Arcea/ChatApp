@@ -6,7 +6,7 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<link rel="stylesheet" href="/scripts/main.css"/>
 	</head>
-	<body class="main">
+	<body class="main" onload="scrollDiv_init()">
 	<div class="container">
 	<div id="userFormArea" class="row">
 		<div class="col-md-12">
@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div class="col-md-8">
-				<div class="chat" id="chat"></div>
+				<div class="chat" id="chat" onmouseover="pauseDiv()" onmouseout="resumeDiv()"></div>
 				<form id="messageForm">
 				<div class="form-group">
 					<label>Enter Message</label>

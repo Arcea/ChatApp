@@ -61,3 +61,38 @@ $(function() {
 		$chat.append('<div class="well"<strong>' + 'Welcome ' + user + ' you are the first to join, invite some friends to chat!</strong></div>');
 	})
 });
+
+var scrollRate = 100;
+
+function scrollDiv_init(){
+	var chat = $('#chat');
+	reachedMaxScroll = false;
+
+	chat.scrollTop = 0;
+	previousScrollTop = 0;
+
+	scrollInterval = setInterval('scrollDiv()', scrollRate);
+}
+
+function scrollDiv() {
+	if (!reachedMaxScroll) {
+		chat.scrollTop = previousScrollTop;
+		previousScrollTop++;
+
+		reachedMaxScroll = chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight);
+	} else {
+		reachedMaxScroll = (chat.scrollTop == 0)?false:true;
+
+		chat.scrollTop = previousScrollTop;
+		previousScrollTop--;
+	}
+}
+
+function pauseDiv() {
+	clearInterval(scrollInterval);
+}
+
+function resumeDiv() {
+	previousScrollTop = chat.scrollTop;
+	scrollInterval = setInterval('scrollDiv()', scrollRate);
+}
