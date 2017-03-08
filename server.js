@@ -3,6 +3,12 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = require('./host');
+var portfinder = require('portfinder');
+
+portfinder.getPort(function (err, port){
+	console.log(port);
+})
+
 
 var users = [];
 var connections = [];
