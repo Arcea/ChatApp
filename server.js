@@ -9,9 +9,10 @@ var connections = [];
 server.listen(process.env.PORT || process.argv[2] || 8000);
 console.log("Server up");
 
-app.get('/', function(req, res) {
-	res.sendFile(__dirname + '/index.html');
-})
+app.use(express.static(__dirname, {
+	extensions: ['html', 'js', 'css']
+}));
+
 
 io.sockets.on('connection', function(socket) {
 	connections.push(socket);
