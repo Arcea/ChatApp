@@ -61,6 +61,8 @@ io.sockets.on('connection', function(socket) {
 		socket.username = data;
 		if (users[0] != undefined) {
 			joinedChat(socket.username);
+		}else {
+			firstToJoin(socket.username);
 		}
 		users.push(socket.username);
 		updateUserNames();
@@ -72,6 +74,10 @@ io.sockets.on('connection', function(socket) {
 
 	function joinedChat(newUser) {
 		io.sockets.emit('joined chat', newUser);
+	}
+
+	function firstToJoin(newUser) {
+		io.sockets.emit('first to join', newUser);
 	}
 
 });

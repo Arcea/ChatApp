@@ -43,4 +43,8 @@ $(function() {
 	socket.on('joined chat', function(user) {
 		$chat.append('<div class="well"><strong>' + user + ' joined the chat</strong></div>');
 	});
+
+	socket.on('first to join', function(user) {
+		$chat.append('<div class="well"<strong>' + 'welkom' + user + 'You are the first to join</strong></div>');
+	})
 });
