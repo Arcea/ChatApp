@@ -1,7 +1,7 @@
 {
   "name": "chatapp",
   "version": "1.0.0",
-  "description": "chatapp for personal use",
+  "description": "basic chatapp pet project",
   "main": "server.js",
   "dependencies": {
     "express": "^4.15.2",
@@ -9,8 +9,17 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arcea/ChatApp.git"
   },
   "author": "Arcea",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arcea/ChatApp/issues"
+  },
+  "homepage": "https://github.com/Arcea/ChatApp#readme"
 }
