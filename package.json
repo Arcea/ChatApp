@@ -1,26 +1,26 @@
 {
-  "name": "chatapp",
-  "version": "1.0.0",
-  "description": "basic chatapp pet project",
-  "main": "server.js",
-  "dependencies": {
-    "express": "^4.15.2",
-    "portfinder": "^1.0.13",
-    "socket.io": "^1.7.3"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Arcea/ChatApp.git"
-  },
-  "author": "Arcea",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Arcea/ChatApp/issues"
-  },
-  "homepage": "https://github.com/Arcea/ChatApp#readme"
+	"name": "chatapp",
+	"version": "1.0.0",
+	"description": "basic chatapp pet project",
+	"main": "server.js",
+	"dependencies": {
+		"express": "^4.15.2",
+		"portfinder": "^1.0.13",
+		"socket.io": "^1.7.3"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "npm install && node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Arcea/ChatApp.git"
+	},
+	"author": "Arcea",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Arcea/ChatApp/issues"
+	},
+	"homepage": "https://github.com/Arcea/ChatApp#readme"
 }
