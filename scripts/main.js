@@ -16,8 +16,21 @@ $(function() {
 		$message.val('');
 	});
 
+	var focused = true;
+
+	window.onfocus = function() {
+		focused = true;
+	};
+	window.onblur = function() {
+		focused = false;
+	};
+
 	socket.on('new message', function(data) {
 		$chat.append('<div class="well"><strong>' + data.user + '</strong>: ' + data.msg + '</div>');
+		if (focused == false) {
+			var audio = new Audio('/audio/notification.mp3');
+			audio.play()
+		}
 	})
 
 	$userForm.submit(function(e) {
