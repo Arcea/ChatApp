@@ -23,7 +23,6 @@ $(function() {
 	$userForm.submit(function(e) {
 		e.preventDefault();
 		socket.emit("new user", $username.val(), function(data) {
-			console.log("stuff" + data);
 			if (data) {
 				$userFormArea.hide();
 				$messageArea.show();
