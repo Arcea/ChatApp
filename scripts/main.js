@@ -46,13 +46,13 @@ $(function() {
 			if (data) {
 				$userFormArea.hide();
 				$messageArea.show();
+				$message.focus();
 			}
 		});
 		$username.val('');
 	});
 
 	socket.on('get users', function(data) {
-		console.log("data " + data);
 		var html = '';
 		for (var i = 0; i < data.length; i++) {
 			html += '<li class="list-group-item">' + data[i] + '</li>';
@@ -71,7 +71,7 @@ $(function() {
 
 var scrollRate = 0.1;
 
-function scrollDiv_init(){
+function scrollDiv_init() {
 	var chat = $('#chat');
 	reachedMaxScroll = false;
 
@@ -88,7 +88,7 @@ function scrollDiv() {
 
 		// reachedMaxScroll = chat.scrollTop >= (chat.scrollHeight - chat.offsetHeight);
 	} else {
-		reachedMaxScroll = (chat.scrollTop == 0)?false:true;
+		reachedMaxScroll = (chat.scrollTop == 0) ? false : true;
 
 		chat.scrollTop = previousScrollTop;
 		previousScrollTop--;
