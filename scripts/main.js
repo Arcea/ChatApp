@@ -53,6 +53,7 @@ $(function() {
 	});
 
 	socket.on('get users', function(data) {
+		console.log(data);
 		var html = '';
 		for (var i = 0; i < data.length; i++) {
 			html += '<li class="list-group-item">' + data[i] + '</li>';
