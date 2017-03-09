@@ -10,6 +10,13 @@ $(function() {
 	var $usernames = $('#users');
 	var $username = $('#username');
 
+	$messageForm.keydown(function(e) {
+		if (e.keyCode == 13) {
+			e.preventDefault();
+			$messageForm.submit();
+		}
+	})
+
 	$messageForm.submit(function(e) {
 		e.preventDefault();
 		socket.emit("send message", $message.val());
